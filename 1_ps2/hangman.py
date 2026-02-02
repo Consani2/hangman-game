@@ -180,7 +180,10 @@ def hangman(secret_word, with_help):
             print(f"Não é a letra: { get_word_progress(secret_word, letters_guessed)} ")
             print(f"A letra ({guess}) é uma consoante. Perde 1 ponto")
             number_guess -= 1
-
+        if has_player_won(secret_word, letters_guessed):
+            print(f"Parábens você ganhou com {number_guess} tentativas")
+            print(f"A palavra era: {secret_word}")
+            return
 
 
 
